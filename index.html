@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="first">
+        <h1 class="cal">Aditya Calculator</h1>
+        <div class="second">
+            <input type="text" id="display" readonly class="display"/>
+            <div class="butt">
+                <button class="bb" onclick="show('7')">7</button>
+                <button class="bb" onclick="show('8')">8</button>
+                <button class="bb" onclick="show('9')">9</button>
+                <button class="bb" onclick="show('/')">/</button>
+            </div>
+            <div class="butt">
+                <button class="bb" onclick="show('4')">4</button>
+                <button class="bb" onclick="show('5')">5</button>
+                <button class="bb" onclick="show('6')">6</button>
+                <button class="bb" onclick="show('*')">*</button>
+            </div>
+            <div class="butt">
+                <button class="bb" onclick="show('3')">3</button>
+                <button class="bb" onclick="show('2')">2</button>
+                <button class="bb" onclick="show('1')">1</button>
+                <button class="bb" onclick="show('-')">-</button>
+            </div>
+            <div class="butt">
+                <button class="bb" onclick="show('0')">0</button>
+                <button class="bb" onclick="clearDisplay()">C</button>
+                <button class="bb" onclick="calclator()">=</button>
+                <button class="bb" onclick="show('+')">+</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        function show(value){ 
+            document.getElementById('display').value += value;  
+        }
+
+        function calclator(){
+            try{
+                let result = eval(document.getElementById('display').value);
+                document.getElementById('display').value = result;
+            }
+            catch(error){
+                document.getElementById('display').value = error;
+            }
+        }
+
+        function clearDisplay(){
+            document.getElementById('display').value = '';
+        }
+    </script>
+</body>
+</html>
